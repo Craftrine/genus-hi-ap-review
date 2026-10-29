@@ -1,0 +1,16 @@
+\section{Block resampling and error propagation}\label{app:jackknife}
+The $4\times4\times4$ partition uses the same normalized spatial labels across redshifts. Each open-complex vertex, edge, face or cube is assigned once to the block containing its lowest-index vertex. With $G_{ib}$ denoting its signed contribution to the negative Euler count, $t_{ib}=G_{ib}/V_i$ and $\sum_b t_{ib}=g_i$. The fraction $f_{ib}$ is the number of grid samples in the block divided by the total number. Equation~(\ref{eq:jk_loo}) removes that block's additive contribution and normalizes by the remaining grid volume. Cross-block elements are assigned by their anchor; they are not redefined as the topology of a freshly cut domain. No field reconstruction, filtering or threshold estimation is repeated for a leave-one-out replicate.
+
+For a curve bin or any other scalar statistic $x$, the reported error is
+\begin{equation}
+\sigma_x=\left[\frac{B-1}{B}\sum_b(x^{(-b)}-\bar x)^2\right]^{1/2}.
+\end{equation}
+For redshift differences we subtract the same block-labelled replicates before taking their scatter. Their covariance therefore includes the cross terms:
+\begin{equation}
+C(g_i-g_1)=C_{ii}+C_{11}-C_{i1}-C_{1i}.
+\end{equation}
+The independent-error sum $C_{ii}+C_{11}$ is not used. The intrinsic template is held fixed when forming the covariance; its joint uncertainty with the measured evolution is not propagated.
+
+For the equal-weight amplitude fit, define $u_j=(1-\nu_{f,j}^2)\exp(-\nu_{f,j}^2/2)$ and $a_j=u_j/\sum_k u_k^2$. Then $A=\boldsymbol a^{\mathsf T}\boldsymbol g$. Refitting the fixed template to each replicate is equivalent to $\sigma_A^2=\boldsymbol a^{\mathsf T}C_g^{\rm JK}\boldsymbol a$, and $\sigma_{AR^3}=R^3\sigma_A$. The percentages in Table~\ref{tab:amplitudes} are descriptive changes without assigned errors; uncertainties on a ratio $A_i/A_1$ would additionally require its paired cross-redshift propagation.
+
+At the simulation cosmology the $250^3$ mesh cannot be divided into four equal integer lengths per axis: blocks have 62 or 63 grid samples along each direction. Using their actual fractions in Eq.~(\ref{eq:jk_loo}) does not by itself make Eq.~(\ref{eq:jk_cov}) an exact unequal-block jackknife prescription. The equal-block prefactor is a retained approximation. Alternative weighting, block size and independent-realization tests are needed to establish its statistical accuracy. OAS regularizes the inverse covariance and preserves the diagonal after rescaling; it does not supply that calibration or convert fixed-field resampling into uncertainty for the complete observational pipeline.

@@ -1,0 +1,141 @@
+{
+  "author": "Wells",
+  "new_field_measurements": 0,
+  "verified_manifest_entries": 204,
+  "table_2": {
+    "rows": 32,
+    "redshifts": [
+      0.10235,
+      0.19095,
+      0.3197,
+      0.59339
+    ],
+    "maximum_percentage_point_error": 0.0
+  },
+  "spectral_amplitudes": {
+    "snapshot": 118,
+    "z": 0.10235,
+    "R": 20,
+    "anisotropic_gaussian_spectral_ratio": 4.474572524796133,
+    "measured_template_ratio": 4.578820648583218,
+    "relative_difference_percent": -2.276746170858235,
+    "interpretation": "Approximate explanation, not an exact match or boundary correction."
+  },
+  "jackknife": {
+    "author": "Wells",
+    "new_field_measurements": 0,
+    "small_counting_tests": 45,
+    "curve_error_entries": 1968,
+    "curve_sigma_max_abs_error": 3.970466940254533e-23,
+    "difference_error_entries": 1968,
+    "difference_sigma_max_abs_error": 2.6469779601696886e-23,
+    "amplitude_errors_checked": 32,
+    "amplitude_sigma_max_abs_error": 5.854691731421724e-18,
+    "block_sum_max_abs_error": 2.117582368135751e-21,
+    "reference_cases_replayed": 17,
+    "unique_wedge_slopes": 11,
+    "weighted_sigma_relative_extrema": [
+      -0.0035134934968451548,
+      0.004175478102100838
+    ],
+    "sklearn_version": "1.9.1",
+    "status": "Arithmetic and saved-data replay pass; unequal-block and conditional-estimator limitations remain"
+  },
+  "scope": "Arithmetic and saved-data consistency only; not independent statistical calibration.",
+  "figure_replay": {
+    "files_generated": 35,
+    "pdf_author_checks": [
+      {
+        "file": "basic/fig__cosmo_redshift_evolution.pdf",
+        "author": "Wells",
+        "pages": 3
+      },
+      {
+        "file": "basic/fig__cosmo_redshift_evolution__A.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "basic/fig__cosmo_redshift_evolution__B.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "basic/fig__cosmo_redshift_evolution__C.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "basic/fig__covmat.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "basic/fig__diff_cosmo.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "basic/fig__diff_redshifts.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "basic/fig__noFG_hcut_msan_comp.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "basic/fig__slices.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "compact/fig__cosmo_redshift_evolution__compact.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "compact/fig__covmat__correlation.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "compact/fig__intrinsic_subtracted_contours__eleven_m_areas.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "compact/fig__intrinsic_subtracted_contours__four_cases.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "compact/fig__intrinsic_subtracted_contours__representative_smoothed.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "foreground/fig__foreground_kspace.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "smoothed/fig__intrinsic_subtracted_contours__eleven_m_areas.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "smoothed/fig__intrinsic_subtracted_contours__eleven_m_smoothed.pdf",
+        "author": "Wells",
+        "pages": 1
+      },
+      {
+        "file": "smoothed/fig__intrinsic_subtracted_contours__four_cases.pdf",
+        "author": "Wells",
+        "pages": 1
+      }
+    ],
+    "warnings": "Archived scripts emit pandas float_precision deprecation warnings; execution succeeds."
+  }
+}

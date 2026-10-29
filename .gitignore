@@ -1,0 +1,43 @@
+# Local environments and Python caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.DS_Store
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+
+# Generated checks and local build outputs
+reproduced/
+replot_output/
+review_outputs/
+tmp/
+build/
+dist/
+*.egg-info/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+manuscript/supplement.pdf
+
+# Do not blanket-ignore PDF, CSV, JSON or NPZ: selected figure assets and
+# derived numerical inputs are intentional review-package contents.

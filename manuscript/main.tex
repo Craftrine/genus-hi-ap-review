@@ -1,0 +1,39 @@
+% v0.21: foreground-cut derivation and explicit block-error definition, 2026-10-29.
+% Compile with XeLaTeX or Tectonic; source/data TODOs remain for the author.
+% Scientific arrays and previous versions are preserved.
+\documentclass[fleqn,usenatbib]{mnras}
+\input{preamble}
+\hypersetup{pdfauthor={Wells}}
+\title[Genus evolution, AP and foreground filtering]{Redshift evolution of the H\,I-weighted genus under Alcock--Paczy\'nski distortions and foreground filtering}
+\author{}
+\date{}
+\pubyear{2026}
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+\begin{keywords}
+large-scale structure of Universe -- cosmology: theory -- methods: numerical -- neutral hydrogen -- topology
+\end{keywords}
+\input{sections/01_introduction}
+\input{sections/02_data}
+\input{sections/03_measurement}
+\input{sections/04_statistics}
+\input{sections/05_results}
+\FloatBarrier % Keep result figures before the discussion and references.
+\input{sections/07_discussion}
+\input{sections/08_conclusions}
+
+\bibliographystyle{mnras}
+\bibliography{references}
+
+\appendix
+\input{sections/09_area_methods}
+\input{sections/11_implementation}
+\input{sections/12_kcut_derivation}
+\input{sections/13_jackknife_details}\label{lastpage}
+\FloatBarrier
+\end{document}

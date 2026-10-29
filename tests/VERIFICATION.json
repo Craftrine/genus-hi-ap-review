@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-29",
+  "python": "3.12.14",
+  "environment": "requirements.txt",
+  "scope": "existing unit tests and an existing nearest-mesh synthetic-array smoke check; no Jiutian production measurement",
+  "nearest_mesh_smoke": {
+    "command": "PYTHONPATH=source NUMBA_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python source/outputs/nearest_mesh_run_20260910/test_geometry.py",
+    "passed": true,
+    "checks": [
+      "full-volume tiling",
+      "object retention",
+      "mass conservation",
+      "anisotropic CIC scaling",
+      "fiducial FFT and genus equivalence"
+    ],
+    "execution_stage": "before release-path redaction; not repeated because only username prefixes changed"
+  },
+  "source_python_files": 83,
+  "syntax_parse": "83 source Python files passed after redaction",
+  "credential_pattern_scan": {
+    "files": "source/**/*.py",
+    "matches": 0,
+    "limitation": "pattern-based scan is not a guarantee that all sensitive content has been identified"
+  },
+  "limitations": [
+    "Original measurement drivers require input catalogues and stage-specific caches that are not all included.",
+    "Nine release files retain machine-specific path structure with username redacted to LOCAL_USER; paths still require configuration, as documented by CODE_MAP.csv.",
+    "Historical periodic-genus fallback in genus_grid._load_core points to a frozen external code package absent at its original location; it is not used by the current nearest-mesh open-Euler tests.",
+    "Test success does not establish numerical convergence or independent statistical calibration."
+  ],
+  "original_file_hashes_verified_before_redaction": 87,
+  "all_original_hashes_matched_before_redaction": true,
+  "release_file_hashes_verified_after_redaction": 87,
+  "redaction": {
+    "changed_files": [
+      "source/external_genus_workbuddy/dense_band_20260917/postprocess_A.py",
+      "source/external_genus_workbuddy/dense_band_20260917/run_dense_fast.py",
+      "source/external_genus_workbuddy/mfs_crosscheck/taper_pipeline.py",
+      "source/full_hi_pipeline/genus_grid.py",
+      "source/outputs/wedge_all_m_20260920/analyze.py",
+      "source/outputs/wedge_all_m_20260920/fill_old_points.py",
+      "source/outputs/wedge_all_m_20260920/fill_tail_points.py",
+      "source/outputs/wedge_all_m_20260920/finish.py",
+      "source/run_top_hi_weighted_all13_audit.py"
+    ],
+    "substitution": "Original local home-directory username -> LOCAL_USER",
+    "original_sources_modified": false,
+    "numerical_algorithm_changed": false,
+    "original_hashes": "CODE_MAP.csv source_sha256",
+    "release_hashes": "CODE_MAP.csv release_sha256"
+  },
+  "pytest_before_redaction": {
+    "command": "PYTHONPATH=source NUMBA_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m pytest -q tests",
+    "passed": 15,
+    "elapsed_seconds": 46.78
+  },
+  "pytest_after_redaction": {
+    "command": "PYTHONPATH=source NUMBA_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m pytest -q tests",
+    "passed": 15,
+    "elapsed_seconds": 0.65
+  },
+  "original_sources_reverified_after_redaction": 87,
+  "prepublication_addendum": {
+    "added_source": "source/outputs/nearest_mesh_figure_refresh_20260910/measure.py",
+    "purpose": "main 48-curve production entry point, including matched block contributions and saved slices",
+    "source_python_files_now": 84,
+    "syntax_check": "All 84 source Python files parse successfully",
+    "new_production_measurements": 0,
+    "note": "Existing 15-test results are retained; the added driver requires original inputs and was not executed."
+  }
+}

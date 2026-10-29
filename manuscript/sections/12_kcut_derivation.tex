@@ -1,0 +1,25 @@
+\section{Foreground-cut scales and wedge geometry}\label{app:kcut}
+The minus sign in $\mathrm{d}\chi/\mathrm{d}\nu_{\rm obs}=-Y$ reverses the radial Fourier direction but leaves the symmetric cut in $|k_\parallel|$ unchanged. Equations~(\ref{eq:frequency_distance})--(\ref{eq:kcut_frequency}) follow by matching the phases $k_\parallel\Delta\chi$ and $2\pi\eta\Delta\nu_{\rm obs}$ in a locally narrow frequency interval. For $\chi_h=h\chi$, measured numerically in $h^{-1}\mathrm{Mpc}$, the corresponding conversion is $Y_h=hY$ and $k_{{\rm cut},h}=2\pi\eta_{\rm cut}/Y_h$.
+
+An effective bandwidth $B_\nu$ gives a radial depth $L_\parallel\simeq YB_\nu$ and a fundamental scale $2\pi/L_\parallel$. This is not automatically the foreground threshold: removing a chosen number of fitted spectral components need not delete the same number of Fourier modes. The four coeval snapshots likewise do not specify an observing band or a light cone. At fixed numerical $k_{{\rm cut},h}$, the equivalent spectral period $2\pi/(Y_hk_{{\rm cut},h})$ varies with redshift.
+
+With the adopted Fourier convention, the cut corresponds to a radial wavelength
+\begin{equation}
+\lambda_{\parallel,\rm cut}=\frac{2\pi}{k_{\rm cut}}
+=62.83\,h^{-1}\mathrm{Mpc}.
+\end{equation}
+Thus $|k_\parallel|<k_{\rm cut}$ removes longer radial wavelengths, including the zero radial mode. It is not a cut on the total three-dimensional wavenumber. Since retained modes satisfy $k\geq |k_\parallel|\geq k_{\rm cut}$, their Gaussian amplitude transfer obeys $W_R(k)\leq\exp[-(k_{\rm cut}R)^2/2]=e^{-2}$ for $R=20\,h^{-1}\mathrm{Mpc}$. The corresponding power-transfer bound is $e^{-4}$; neither bound is a retained total-variance or information fraction.
+
+For a transverse baseline of length $b$, a source at angle $\theta$ has geometric delay $|\tau|\leq b\sin\theta/c$. Using $k_\perp=2\pi b/(\lambda_{\rm obs}D_M)$ and $\lambda_{\rm obs}=c(1+z)/\nu_{21}$ gives
+\begin{equation}
+|k_\parallel|\leq m_{\rm geom}(z,\theta)k_\perp,\qquad
+m_{\rm geom}=\frac{D_M(z)H(z)}{c(1+z)}\sin\theta.
+\end{equation}
+This is the geometric wedge relation \citep{SeoHirata2016Wedge}. The fixed slopes in our scans are controlled mask parameters, not redshift-dependent horizon boundaries at each snapshot.
+
+The implemented retained-mode mask is
+\begin{equation}
+M(\boldsymbol k)=\boldsymbol 1_{|k_\parallel|\geq k_{\rm cut}}
+\boldsymbol 1_{|k_\parallel|>mk_\perp}.
+\end{equation}
+The second factor is omitted for the horizontal-only case. The boundary is therefore the larger of $k_{\rm cut}$ and $mk_\perp$, with the stated equality conventions, rather than their sum. Their intersection is $k_\perp=k_{\rm cut}/m$. This also explains why a weak wedge can add little removal after smoothing.

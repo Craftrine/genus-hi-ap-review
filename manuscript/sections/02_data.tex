@@ -1,0 +1,22 @@
+\section{Simulation and samples}\label{sec:data}
+The Jiutian simulation suite was developed to support the extragalactic surveys of the China Space Station Telescope (CSST; \citealt{Jiutian2025Overview}). It combines primary runs at different resolutions, the Kun runs sampling cosmological parameters \citep{Chen2025Kun}, extensions with massive neutrinos \citep{Chen2025Neutrinos,Yu2026CUBE2}, warm dark matter \citep{He2023WarmDM} and interacting dark energy \citep{Zhang2019IDE}, and constrained zoom simulations of regions in the observed Universe \citep{Luo2024ELUCID}. The primary runs also provide the basis for mock galaxy catalogues built with semi-analytical models \citep{Pei2024Emission,Tan2026GAEA} and subhalo abundance matching \citep{Gu2024SHAM}, as well as catalogues and synthetic observations for the CSST imaging surveys \citep{Wei2026MockCatalog,Wei2026Framework}.
+
+We use four snapshots from Jiutian 1G, a dark-matter-only $N$-body run in a periodic box of side $1000\,h^{-1}\mathrm{Mpc}$. The published run evolves $6144^3$ particles with a particle mass of $3.723\times10^8\,h^{-1}\mathrm{M}_{\odot}$ and a comoving gravitational softening of $4\,h^{-1}\mathrm{kpc}$ \citep{Jiutian2025Overview}. Its flat $\Lambda$CDM cosmology has $\Omega_{m,\mathrm{sim}}=0.3111$, $\Omega_b=0.049$, $h=0.6766$, $n_s=0.9665$, $\sigma_8=0.8102$ and $w_{\mathrm{sim}}=-1$. The snapshots span $z=0.10$--$0.59$; their redshifts and selected sample sizes are listed in Table~\ref{tab:snapshots}. \todo{Confirm the H\,I assignment model and the provenance of the specific galaxy catalogue used here.}
+
+\begin{table}
+\centering
+\caption{Snapshots and sample sizes.}
+\label{tab:snapshots}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Snapshot & Redshift & Objects \\
+\midrule
+118 & 0.10235 & $10^6$ \\
+112 & 0.19095 & $10^6$ \\
+105 & 0.31970 & $10^6$ \\
+94 & 0.59339 & $10^6$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At each snapshot, we retain objects with finite positions, velocities and positive finite H\,I masses, select the $10^6$ objects with the largest H\,I masses, and weight them by H\,I mass. Selection is performed independently at each redshift. We also analyse all valid objects with positive H\,I mass as a sample-selection comparison.

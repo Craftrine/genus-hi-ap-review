@@ -1,0 +1,37 @@
+\section{Statistic}\label{sec:statistics}
+Following the use of redshift differences and simulation-based evolution corrections in tomographic AP analyses \citep{Li2015Tomographic2PCF,Li2016TomographicAP}, we define an analogous residual for the genus. For each foreground treatment, we take the lowest redshift $z_1$ as the reference and define the intrinsic evolution from the simulation cosmology:
+\begin{equation}
+\boldsymbol I_i=\boldsymbol g_i(\theta_{\mathrm{sim}})-\boldsymbol g_1(\theta_{\mathrm{sim}}),\qquad i=2,3,4.
+\end{equation}
+For each scan cosmology $\theta$, we subtract this template from the corresponding redshift difference:
+\begin{equation}
+\boldsymbol p_i(\theta)=\boldsymbol g_i(\theta)-\boldsymbol g_1(\theta)-\boldsymbol I_i.
+\end{equation}
+Here $\boldsymbol I_i$ is the intrinsic redshift evolution of the selected, filtered tracer field in the simulation cosmology. Because the same measurements define the template and the residual, $\boldsymbol p_i(\theta_{\mathrm{sim}})=\boldsymbol0$ exactly by construction. An incorrect distance--redshift relation changes the AP scaling with redshift and hence the physical scales selected by fixed scan-coordinate smoothing and foreground cuts; the residual generally no longer vanishes. This is the redshift-dependent response that the statistic tests, not a new simulation of structure growth in each trial cosmology. Fig.~\ref{fig:evolution} shows the non-zero residuals for two illustrative scan cosmologies; the complete curves, including the simulation cosmology, are retained in the supplementary figures. All differences are evaluated at the same 41 volume-fraction thresholds, with a separate template for each foreground treatment.
+
+We concatenate the three residual vectors into a 123-component vector $\boldsymbol p$ and define
+\begin{equation}
+\chi^2_{\mathrm{int}}(\theta)=\boldsymbol p^{\mathsf T}C^{-1}\boldsymbol p,
+\end{equation}
+where $C$ includes correlations between thresholds and redshift pairs. This statistic vanishes at the simulation cosmology by construction. For comparison, we also compute the unsubtracted statistic $\chi^2$ using the same covariance. Template subtraction does not necessarily lower the statistic at other cosmologies.
+
+For each foreground treatment, we estimate the covariance at the simulation cosmology using $B=64$ spatial blocks. Let $\boldsymbol t_{ib}$ be block $b$'s additive contribution to the full-volume genus density at redshift $i$, and $f_{ib}$ its grid-volume fraction. The leave-one-out vector is
+\begin{equation}\label{eq:jk_loo}
+\boldsymbol g_i^{(-b)}=\frac{\boldsymbol g_i-\boldsymbol t_{ib}}{1-f_{ib}}.
+\end{equation}
+The filtered field and thresholds remain fixed. We concatenate the three paired differences $\boldsymbol g_i^{(-b)}-\boldsymbol g_1^{(-b)}$ into $\boldsymbol d^{(-b)}$ and use
+\begin{equation}\label{eq:jk_cov}
+C^{\rm JK}_{ab}=\frac{B-1}{B}\sum_{b'=1}^{B}
+(d_a^{(-b')}-\bar d_a)(d_b^{(-b')}-\bar d_b),
+\end{equation}
+where $\bar{\boldsymbol d}=B^{-1}\sum_{b'}\boldsymbol d^{(-b')}$. This retains correlations between thresholds and redshift pairs. The prefactor is the usual equal-block jackknife factor \citep{Norberg2009Errors}; in the implementation it is retained despite small differences in block volume, while Eq.~(\ref{eq:jk_loo}) uses each block's actual fraction. This approximation and the fixed-field interpretation are detailed in Appendix~\ref{app:jackknife}.
+
+The $123\times123$ matrix has rank at most 63. We standardize the centred replicate vectors, apply oracle-approximating shrinkage (OAS; \citealt{Chen2010OAS}) using the scikit-learn implementation \citep{Pedregosa2011ScikitLearn}, and restore the original variances. Equivalently, up to floating-point roundoff,
+\begin{equation}\label{eq:jk_oas}
+C=(1-\lambda)C^{\rm JK}+\lambda\,\mathrm{diag}(C^{\rm JK}),
+\end{equation}
+where $\lambda$ is the fitted OAS shrinkage coefficient on the standardized vectors. The regularized covariance is held fixed across scan cosmologies. Curve and paired-difference error bars use $\sqrt{C^{\rm JK}_{aa}}$ from their corresponding replicates; the fixed-covariance residual display uses the matched diagonal of $C$.
+
+We evaluate $\chi^2_{\mathrm{int}}$ at 1285 points in the $(\Omega_m,w)$ plane, concentrated along the degeneracy direction with nominal sampling steps of $\Delta\Omega_m=0.00275$ and $\Delta w=0.01$. We linearly interpolate the weights $\exp(-\chi^2_{\mathrm{int}}/2)$ between sampled points, then smooth the weight surface with a Gaussian kernel of widths $(\sigma_{\Omega_m},\sigma_w)=(0.0069,0.0196)$. These widths follow an empirical rule based on 2.5 times the median nearest-neighbour spacing after scaling the scan rectangle to unit sides. The smoothing reduces variation on the scale of the parameter sampling; its bandwidth has not been independently calibrated as an uncertainty model.
+
+We normalize the smoothed weight within the convex hull of the sampled points and construct highest-density regions containing 68.3, 95.4 and 99.7 per cent of this weight \citep{Hyndman1996HDR}. All parameter contours and area comparisons below use this same construction, including the horizontal-cut reference and the individual redshift pairs. Appendix~\ref{app:area} describes the finite-domain normalization and area evaluation. These regions summarize the conditional parameter response of the simulated analysis; their weight fractions are not independently calibrated confidence levels.

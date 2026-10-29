@@ -1,0 +1,41 @@
+\documentclass[fleqn,usenatbib]{mnras}
+\input{preamble}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\makeatletter
+\newenvironment{suppfigure}{\par\noindent\begin{minipage}{\textwidth}\def\@captype{figure}\let\@makecaption\SFB@makefigurecaption\centering}{\end{minipage}\par}
+\newenvironment{supptable}{\par\noindent\begin{minipage}{\textwidth}\def\@captype{table}\let\@makecaption\SFB@maketablecaption\centering}{\end{minipage}\par}
+\makeatother
+\begin{document}
+\pagestyle{plain}
+\onecolumn
+\section*{Supplementary figures and area table}
+These panels retain the full foreground and redshift comparisons underlying the compact main figures. Their statistics, curves and area values are unchanged from the saved v0.18 results. The regions describe normalized pipeline weights, not independently calibrated confidence levels.
+\begin{suppfigure}\centering\includegraphics[page=1,width=.92\textwidth,height=.76\textheight,keepaspectratio]{figures/fig__cosmo_redshift_evolution.pdf}
+\caption{Full genus, redshift differences and intrinsic-subtracted residuals for the simulation cosmology (A) and illustrative cosmologies (B and C, continued). All four foreground treatments are retained. Rows and error bars follow the main-text definitions.}
+\end{suppfigure}
+\clearpage
+\begin{suppfigure}\centering\includegraphics[page=2,width=.92\textwidth,height=.76\textheight,keepaspectratio]{figures/fig__cosmo_redshift_evolution.pdf}
+\contcaption{Panel B: $(\Omega_m,w)=(0.2,-1.4)$.}
+\end{suppfigure}
+\clearpage
+\begin{suppfigure}\centering\includegraphics[page=3,width=.92\textwidth,height=.76\textheight,keepaspectratio]{figures/fig__cosmo_redshift_evolution.pdf}
+\contcaption{Panel C: $(\Omega_m,w)=(0.42,-0.6)$.}
+\end{suppfigure}
+\clearpage
+\begin{suppfigure}\centering\includegraphics[width=.92\textwidth,height=.83\textheight,keepaspectratio]{figures/fig__intrinsic_subtracted_contours__four_cases_full.pdf}
+\caption{All four foreground treatments, including the weak wedge, for the three redshift differences and joint statistic. Solid, dashed and dotted contours enclose 68.3, 95.4 and 99.7 per cent of the weight. Shading marks 68.3 per cent; grey dashed lines mark the domain boundary and stars the simulation cosmology.}
+\end{suppfigure}
+\clearpage
+\begin{suppfigure}\centering\includegraphics[width=.92\textwidth,height=.83\textheight,keepaspectratio]{figures/fig__intrinsic_subtracted_contours__eleven_m_smoothed.pdf}
+\caption{All eleven wedge slopes. The dark dash-dotted curve gives the horizontal-cut 68.3 per cent reference. Other line styles, shading, boundary and star conventions follow Fig.~S2.}
+\end{suppfigure}
+\clearpage
+\begin{suppfigure}
+\centering
+\includegraphics[width=.92\textwidth]{figures/fig__covmat.pdf}
+\caption{Full regularized covariance (top, symmetric-logarithmic scale in $10^{-15}h^6\mathrm{Mpc}^{-6}$) and correlation matrices (bottom). Axis numbers identify the three redshift pairs; thresholds increase within each block. The covariance amplitudes complement the correlation-only main figure.}
+\end{suppfigure}
+\bigskip
+\input{supplement_area_table}
+\end{document}

@@ -1,0 +1,75 @@
+{
+  "snapshot": 118,
+  "z": 0.10235,
+  "R": 20,
+  "kparallel_cut": 0.1,
+  "current_manuscript_amplitudes_exact_match": true,
+  "saved_matrix_determinants_verified": true,
+  "matrices": {
+    "nofg": [
+      [
+        0.000842845200473995,
+        -8.507990086428828e-06,
+        -1.0416456169579061e-05
+      ],
+      [
+        -8.507990086428828e-06,
+        0.0008401603839338664,
+        -1.0305031374374348e-05
+      ],
+      [
+        -1.0416456169579061e-05,
+        -1.0305031374374348e-05,
+        0.0010420473720706587
+      ]
+    ],
+    "horizontal_only": [
+      [
+        0.0011077159692507387,
+        1.9259058688951166e-05,
+        -0.0001012205346970037
+      ],
+      [
+        1.9259058688951166e-05,
+        0.0011030159870164195,
+        -3.166359263909087e-05
+      ],
+      [
+        -0.0001012205346970037,
+        -3.166359263909087e-05,
+        0.012101287741769275
+      ]
+    ]
+  },
+  "source_sha256": "affa896a423ea9a7261c71f7599057ae84127ba6ab1e20be4d8493b74228c9cb",
+  "ratios": [
+    {
+      "method": "topology_gaussian_AR3",
+      "noFG_AR3": 0.005164041314992999,
+      "horizontal_AR3": 0.023645219003226775,
+      "ratio": 4.578820648583218,
+      "relative_difference_from_topology_percent": 0.0
+    },
+    {
+      "method": "spectral_padded_AR3",
+      "noFG_AR3": 0.005503678759926258,
+      "horizontal_AR3": 0.024626609764470085,
+      "ratio": 4.474572524796133,
+      "relative_difference_from_topology_percent": -2.276746170858235
+    },
+    {
+      "method": "gradient_retained_AR3",
+      "noFG_AR3": 0.0053593806704411275,
+      "horizontal_AR3": 0.0243831968281388,
+      "ratio": 4.549629579891707,
+      "relative_difference_from_topology_percent": -0.6375237409777856
+    },
+    {
+      "method": "isotropic_trace_AR3",
+      "noFG_AR3": 0.00554767215141599,
+      "horizontal_AR3": 0.06677282585190454,
+      "ratio": 12.036188157741336,
+      "relative_difference_from_topology_percent": 162.8665562925157
+    }
+  ]
+}

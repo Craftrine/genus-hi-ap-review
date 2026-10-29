@@ -1,0 +1,10 @@
+\section{Measurement details and diagnostic variants}\label{app:implementation}
+At open boundaries, CIC weights are renormalized over cells inside the box to conserve deposited mass. The density contrast is zero-extended before Fourier transformation. For the Euler count, the cell-centred samples serve as vertices; an edge, face or cube is included only when all its vertices lie strictly above threshold. Each element is counted once, without identifying opposite faces.
+
+The fixed-mesh diagnostic uses $250^3$ cells with $\Delta_i=L_i/250$, the same selected objects, $R=20\,h^{-1}\mathrm{Mpc}$ and 41 thresholds. The tapered variant multiplies the Fourier amplitude by
+\begin{equation}
+W=\tfrac12\left[1+\tanh\left(\frac{|k_\parallel|-k_{\rm cut}}{0.01\,h\,\mathrm{Mpc}^{-1}}\right)\right],
+\end{equation}
+where $k_{\rm cut}=0.1\,h\,\mathrm{Mpc}^{-1}$ for the horizontal cut and $\max(0.1\,h\,\mathrm{Mpc}^{-1},mk_\perp)$ for a wedge. Each variant uses its own simulation-cosmology intrinsic template. Comparisons first hold the main covariance fixed; the additional covariance test re-estimates it from the tapered simulation-cosmology fields with the same block method. Neither is an independent-realization calibration.
+
+The 271-node area comparison uses identical nodes, triangulation and subdomain for both variants, with no parameter-space Gaussian smoothing. It evaluates highest-density regions from interpolated weights, re-determining the threshold for each surface. This diagnostic construction differs from the smoothed full-scan presentation; its area ratios are used only to assess sensitivity to the changes in measurement definition.

@@ -1,0 +1,14 @@
+参考登记｜2026-10-29
+
+R1. Hee-Jong Seo; Christopher M. Hirata (2016). The foreground wedge and 21-cm BAO surveys. MNRAS 456,3142–3156. DOI 10.1093/mnras/stv2806; arXiv:1508.06503. https://arxiv.org/pdf/1508.06503
+本轮读取预印本全文§2.3（PDF第4–5页）式(7)–(11)。支持频率-距离Jacobian、傅里叶2π约定及几何wedge。文中f/τ映射本项目ν_obs/η，D对应平直宇宙的D_M。角范围sinθ由投影几何补入；h单位转换是本轮直接代数。文献不确定本项目0.1阈值，也不验证固定低z m。此前记录曾写§2.1，本轮按打开的预印本定位为§2.3。
+
+R2. P. Norberg; C. M. Baugh; E. Gaztañaga; D. J. Croton (2009). Statistical analysis of galaxy surveys – I. Robust error estimation for two-point clustering statistics. MNRAS 396,19–38. DOI 10.1111/j.1365-2966.2009.14389.x; arXiv:0810.1885. https://arxiv.org/pdf/0810.1885
+本轮全文核对§2.3，PDF第4页式(2)–(3)：等块留一协方差的(B−1)/B及留一均值。对应本文Eq.JK_cov；该文重复测量删块样本，而本项目固定场/阈值，仅删除加性格元贡献。文献不能直接验证本项目近似不等体积分块或其统计覆盖率。
+
+R3. scikit-learn developers. OAS documentation. https://scikit-learn.org/stable/modules/generated/sklearn.covariance.OAS.html （网页访问2026-10-29，无臆定出版年/DOI）。本轮读取官方文档并核对本地scikit-learn 1.3.0的_shrunk_covariance.py函数oas及OAS实现，特别是标准化后的收缩定义和2/p省略。当前网站版本与本地执行版本区分记录，不把网页版本当项目运行版本。
+关联书目：Chen等(2010)，Shrinkage algorithms for MMSE covariance estimation，DOI 10.1109/TSP.2010.2053029，arXiv:0907.4698。本轮未重新逐页核验原文，原书目沿用论文库；具体实现结论以本地源码为证。
+
+R4. Dlamini/Jolicoeur/Maartens (2024) DOI 10.1140/epjc/s10052-024-12467-5：本轮检索定位，但全文下载未成功；仅作旧记录线索，不作为本轮新增推导或取值的验证依据，不新增论文引用。
+
+核验主体为本次工具辅助文献/源码核对；不代表作者本人已逐项签核。BibTeX附在本目录，保留论文既有元数据。

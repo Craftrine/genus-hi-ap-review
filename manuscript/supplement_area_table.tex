@@ -1,0 +1,27 @@
+\begin{supptable}
+\centering
+\caption{Joint areas and area ratios for the adopted smoothed weights. $A_{0.683}$ is in units of $10^{-4}$; each $\mathcal R_f$ is relative to the horizontal cut at the same weight fraction. All eleven wedge cases are retained. Areas remain conditional on the common finite scan domain; boundary contact is recorded in the accompanying CSV tables.}
+\label{tab:sareas}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Filter or $m$ & $A_{0.683}$ & $\mathcal R_{0.683}$ & $\mathcal R_{0.954}$ & $\mathcal R_{0.997}$ \\
+\midrule
+noFG & 59.56 & 3.807 & 3.955$^\dagger$ & 3.710$^\dagger$ \\
+Horizontal & 15.65 & 1.000 & 1.000 & 1.000$^\dagger$ \\
+0.294 & 15.65 & 1.000 & 1.000 & 1.000$^\dagger$ \\
+0.643 & 15.83 & 1.012 & 1.012 & 1.015 \\
+0.993 & 14.69 & 0.939 & 0.937 & 0.957 \\
+1.080 & 16.45 & 1.052 & 1.083 & 1.094 \\
+1.168 & 14.29 & 0.913 & 0.917 & 0.958 \\
+1.255 & 14.51 & 0.927 & 0.960 & 1.010 \\
+1.343 & 12.79 & 0.818 & 0.825 & 0.856 \\
+1.430 & 13.03 & 0.833 & 0.855 & 0.881 \\
+1.517 & 12.63 & 0.807 & 0.822 & 0.849 \\
+1.605 & 13.16 & 0.841 & 0.846 & 0.881 \\
+1.692 & 13.90 & 0.888 & 0.924 & 1.011$^\dagger$ \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{.95\textwidth}\small
+$\dagger$ Explicit boundary-contact flags in the four-treatment comparison indicate that these regions touch the scan hull. Flags for the remaining wedge slopes were not recorded in that comparison; their unmarked entries do not establish absence of boundary contact. All areas use the same finite integration domain.
+\end{minipage}
+\end{supptable}
